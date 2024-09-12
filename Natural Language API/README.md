@@ -22,8 +22,9 @@
 
 6. compile the python function from classify-text.py
 
-`python3 classify-text.py`
+	`python3 classify-text.py`
 
 7. preview the result in BigQuery
-`SELECT * FROM news_classification_dataset.article_data`
+
+	`SELECT * FROM news_classification_dataset.article_data`
 
