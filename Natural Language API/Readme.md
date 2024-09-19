@@ -1,7 +1,20 @@
 export API_KEY=<api_key_provided_by_gcp>
 
-curl "https://language.googleapis.com/v1/documents:classifyText?key=${API_KEY}" \
-  -s -X POST -H "Content-Type: application/json" --data-binary @request.json
+Classify Text
+`curl "https://language.googleapis.com/v1/documents:classifyText?key=${API_KEY}" \
+  -s -X POST -H "Content-Type: application/json" --data-binary @request.json`
+
+Analyze Entity
+`curl "https://language.googleapis.com/v1/documents:analyzeEntities?key=${API_KEY}" \
+  -s -X POST -H "Content-Type: application/json" --data-binary @request.json > result.json`
+
+Sentiment Analysis
+`curl "https://language.googleapis.com/v1/documents:analyzeSentiment?key=${API_KEY}" \
+  -s -X POST -H "Content-Type: application/json" --data-binary @request.json`
+
+Analyze Part of Speech
+`curl "https://language.googleapis.com/v1/documents:analyzeSyntax?key=${API_KEY}" \
+  -s -X POST -H "Content-Type: application/json" --data-binary @request.json`
 
 gcloud storage cat gs://cloud-training-demos-text/bbc_dataset/entertainment/001.txt
 

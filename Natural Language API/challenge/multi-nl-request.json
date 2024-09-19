@@ -1,0 +1,14 @@
+cat > multi-nl-request.json <<EOF
+{
+  "document": {
+    "type": "PLAIN_TEXT",
+    "content": "Le bureau japonais de Google est situé à Roppongi Hills, Tokyo.",
+    "language": "fr"
+  }
+}
+
+EOF
+
+curl "https://language.googleapis.com/v1/documents:analyzeEntities?key=${API_K
+EY}"   -s -X POST -H "Content-Type: application/json" --data-binary @multi-nl-request.json > multi-response.txt
+
